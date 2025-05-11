@@ -69,7 +69,8 @@ module ActiveAdminImport
         if authorized?(ActiveAdminImport::Auth::IMPORT, active_admin_config.resource_class)
           link_to(
             I18n.t('active_admin_import.import_model', plural_model: options[:plural_resource_label]),
-            action: :import
+            {action: :import},
+            class: "action-item-button"
           )
         end
       end
